@@ -1,0 +1,57 @@
+﻿@model IEnumerable<UniSystemHelpDesk.Models.US_USUARIOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOME_USUARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL_USUARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SENHA_USUARIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.US_SETORES.SETOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.US_TIPO_USUARIO.TIPO_USUARIO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOME_USUARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL_USUARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SENHA_USUARIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_SETORES.SETOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_TIPO_USUARIO.TIPO_USUARIO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_USUARIOS }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_USUARIOS }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_USUARIOS })
+        </td>
+    </tr>
+}
+
+</table>

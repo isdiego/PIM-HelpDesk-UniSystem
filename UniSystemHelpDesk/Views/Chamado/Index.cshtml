@@ -1,0 +1,75 @@
+﻿@model IEnumerable<UniSystemHelpDesk.Models.US_CHAMADOS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Meus Chamados</h2>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Inicio", "Index", "Home/BemVindo", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @Html.ActionLink("Novo Chamado", "Index", "Chamado/Create", new { area = "" }, new { @class = "navbar-brand" })
+            </ul>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Descrição do chamado") 
+        </th>
+        <th>
+            @Html.DisplayName("Data de abertura")
+        </th>
+        <th>
+            @Html.DisplayName("Equipamento")
+        </th>
+        <th>
+            @Html.DisplayName("Status")
+        </th>
+        <th>
+            @Html.DisplayName("Comentarios")
+        </th>
+        <th>
+            @Html.DisplayName("Usuário")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA_CRIACAO_CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_EQUIPAMENTO.EQUIPAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_STATUS.STATUS_CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMENTARIOS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_USUARIOS.NOME_USUARIO)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID_CHAMADO }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ID_CHAMADO })
+        </td>
+    </tr>
+}
+
+</table>

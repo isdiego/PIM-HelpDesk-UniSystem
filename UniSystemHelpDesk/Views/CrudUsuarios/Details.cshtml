@@ -1,0 +1,58 @@
+﻿@model UniSystemHelpDesk.Models.US_USUARIOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>US_USUARIOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NOME_USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOME_USUARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_USUARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SENHA_USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SENHA_USUARIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.US_SETORES.SETOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.US_SETORES.SETOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.US_TIPO_USUARIO.TIPO_USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.US_TIPO_USUARIO.TIPO_USUARIO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_USUARIOS }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

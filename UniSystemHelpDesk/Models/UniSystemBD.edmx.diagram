@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="48bd4d96eefa4d69b1ee9a8ac5afba01" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="UniSystemBDModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_CHAMADOS" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_EQUIPAMENTO" Width="1.5" PointX="2.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_SETORES" Width="1.5" PointX="9.875" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_STATUS" Width="1.5" PointX="7.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_TIPO_EQUIPAMENTO" Width="1.5" PointX="2.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_TIPO_USUARIO" Width="1.5" PointX="9.875" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_USUARIOS" Width="1.5" PointX="7.75" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="UniSystemBDModel.FK__US_CHAMAD__ID_EQ__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="UniSystemBDModel.FK__US_CHAMAD__ID_ST__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="UniSystemBDModel.FK__US_CHAMAD__ID_US__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="UniSystemBDModel.FK__US_EQUIPA__ID_TI__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="UniSystemBDModel.FK__US_USUARI__ID_SE__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="UniSystemBDModel.FK__US_USUARI__ID_TI__145C0A3F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

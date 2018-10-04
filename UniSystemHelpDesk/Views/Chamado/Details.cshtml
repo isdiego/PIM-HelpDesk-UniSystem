@@ -1,0 +1,90 @@
+﻿@model UniSystemHelpDesk.Models.US_CHAMADOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>US_CHAMADOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_CRIACAO_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_CRIACAO_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_INICIO_SUPORTE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_INICIO_SUPORTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATA_FINALIZACAO_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_FINALIZACAO_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOLUCAO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUCAO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMENTARIOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMENTARIOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.US_EQUIPAMENTO.EQUIPAMENTO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.US_EQUIPAMENTO.EQUIPAMENTO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.US_STATUS.STATUS_CHAMADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.US_STATUS.STATUS_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.US_USUARIOS.NOME_USUARIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.US_USUARIOS.NOME_USUARIO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CHAMADO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
