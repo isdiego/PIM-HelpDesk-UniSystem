@@ -11,13 +11,17 @@ namespace UniSystemHelpDesk.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class US_CHAMADOS
     {
         public int ID_CHAMADO { get; set; }
         public string CHAMADO { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DATA_CRIACAO_CHAMADO { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DATA_INICIO_SUPORTE { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DATA_FINALIZACAO_CHAMADO { get; set; }
         public string SOLUCAO { get; set; }
         public string COMENTARIOS { get; set; }
