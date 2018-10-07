@@ -11,7 +11,6 @@ namespace UniSystemHelpDesk.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class US_USUARIOS
     {
@@ -22,12 +21,7 @@ namespace UniSystemHelpDesk.Models
     
         public int ID_USUARIOS { get; set; }
         public string NOME_USUARIO { get; set; }
-        [Required(ErrorMessage = "Por favor, informe seu usuário!")]
-        [Display(Name = "Informe seu usuário!")]
         public string EMAIL_USUARIO { get; set; }
-        [Required(ErrorMessage="Por favor, informe sua senha!")]
-        [Display(Name="Informe sua senha!")]
-        [DataType(DataType.Password)]
         public string SENHA_USUARIO { get; set; }
         public Nullable<int> ID_TIPO_USUARIO { get; set; }
         public Nullable<int> ID_SETOR { get; set; }

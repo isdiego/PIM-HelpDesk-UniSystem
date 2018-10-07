@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="UniSystemBDModel.US_SETORES" Width="1.625" PointX="9.625" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="UniSystemBDModel.US_STATUS" Width="2" PointX="7.25" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="UniSystemBDModel.US_TIPO_EQUIPAMENTO" Width="1.875" PointX="2.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UniSystemBDModel.US_TIPO_USUARIO" Width="1.625" PointX="9.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniSystemBDModel.US_TIPO_USUARIO" Width="3.625" PointX="9.625" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="UniSystemBDModel.US_USUARIOS" Width="2" PointX="7.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="UniSystemBDModel.FK__US_CHAMAD__ID_EQ__1FCDBCEB" ManuallyRouted="false" />
         <AssociationConnector Association="UniSystemBDModel.FK__US_CHAMAD__ID_ST__20C1E124" ManuallyRouted="false" />
