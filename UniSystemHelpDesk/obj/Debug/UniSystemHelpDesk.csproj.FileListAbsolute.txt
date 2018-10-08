@@ -27,3 +27,4 @@ c:\users\diego\documents\visual studio 2013\Projects\UniSystemHelpDesk\UniSystem
 c:\users\diego\documents\visual studio 2013\Projects\UniSystemHelpDesk\UniSystemHelpDesk\bin\System.Web.Http.WebHost.xml
 c:\users\diego\documents\visual studio 2013\Projects\UniSystemHelpDesk\UniSystemHelpDesk\obj\Debug\UniSystemHelpDesk.dll
 c:\users\diego\documents\visual studio 2013\Projects\UniSystemHelpDesk\UniSystemHelpDesk\obj\Debug\UniSystemHelpDesk.pdb
+C:\Users\diego\Documents\Visual Studio 2013\Projects\UniSystemHelpDesk\UniSystemHelpDesk\obj\Debug\UniSystemHelpDesk.csprojResolveAssemblyReference.cache

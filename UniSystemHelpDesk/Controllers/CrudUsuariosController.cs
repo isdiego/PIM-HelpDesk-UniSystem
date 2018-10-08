@@ -132,5 +132,9 @@ namespace UniSystemHelpDesk.Controllers
             }
             base.Dispose(disposing);
         }
+        public JsonResult UsuarioDisponivel(string EMAIL_USUARIO)
+        {
+            return Json(!db.US_USUARIOS.Any(x => x.EMAIL_USUARIO == EMAIL_USUARIO), JsonRequestBehavior.AllowGet);
+        }
     }
 }

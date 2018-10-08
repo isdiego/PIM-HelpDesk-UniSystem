@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace UniSystemHelpDesk.Models
 {
@@ -21,6 +22,7 @@ namespace UniSystemHelpDesk.Models
     {
         [Required(ErrorMessage = "Preecha o campo", AllowEmptyStrings = false)]
         [EmailAddress(ErrorMessage="E-mail invalido")]
+        
         public string EMAIL_USUARIO { get; set; }
         [Required(ErrorMessage = "Preecha o campo", AllowEmptyStrings=false)]
         [DataType(DataType.Password)]
