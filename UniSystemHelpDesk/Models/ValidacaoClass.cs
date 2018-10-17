@@ -35,5 +35,12 @@ namespace UniSystemHelpDesk.Models
 
         [Required(ErrorMessage = "Preecha o campo", AllowEmptyStrings = false)]
         public int ID_EQUIPAMENTO { get; set; }
+
+        [DataType(DataType.Date)]
+        public string DATA_CRIACAO_CHAMADO { get; set; }
+        [DataType(DataType.Date)]
+        public string DATA_FINALIZACAO_CHAMADO { get; set; }
+        [DataType(DataType.Date)]
+        public string DATA_INICIO_SUPORTE { get; set; }
     }
 }

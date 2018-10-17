@@ -1,0 +1,82 @@
+﻿@model IEnumerable<UniSystemHelpDesk.Models.US_CHAMADOS>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CHAMADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA_CRIACAO_CHAMADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA_INICIO_SUPORTE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATA_FINALIZACAO_CHAMADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOLUCAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMENTARIOS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.US_EQUIPAMENTO.EQUIPAMENTO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.US_STATUS.STATUS_CHAMADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.US_USUARIOS.NOME_USUARIO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA_CRIACAO_CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA_INICIO_SUPORTE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATA_FINALIZACAO_CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLUCAO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMENTARIOS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_EQUIPAMENTO.EQUIPAMENTO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_STATUS.STATUS_CHAMADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.US_USUARIOS.NOME_USUARIO)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_CHAMADO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_CHAMADO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_CHAMADO })
+        </td>
+    </tr>
+}
+
+</table>

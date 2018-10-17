@@ -148,6 +148,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ChamadoController.cs" />
+    <Compile Include="Controllers\ChamadoTIController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\CrudUsuariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -220,6 +221,11 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Conta\Login.cshtml" />
     <Content Include="Views\Usuario\segundaPagina.cshtml" />
+    <Content Include="Views\ChamadoTI\Create.cshtml" />
+    <Content Include="Views\ChamadoTI\Delete.cshtml" />
+    <Content Include="Views\ChamadoTI\Details.cshtml" />
+    <Content Include="Views\ChamadoTI\Edit.cshtml" />
+    <Content Include="Views\ChamadoTI\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
