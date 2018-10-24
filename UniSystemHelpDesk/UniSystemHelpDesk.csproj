@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -118,6 +120,13 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\UniSystemBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UniSystemBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UniSystemBD.edmx.diagram">
+      <DependentUpon>UniSystemBD.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -157,9 +166,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FuncaoLocal.cs" />
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>UniSystemBD.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\UniSystemBD.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,13 +208,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\UniSystemBD.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UniSystemBD.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\UniSystemBD.edmx.diagram">
-      <DependentUpon>UniSystemBD.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\BemVindo.cshtml" />

@@ -8,7 +8,7 @@ namespace UniSystemHelpDesk.Controllers
 {
     public class AdminController : Controller
     {
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             return View();

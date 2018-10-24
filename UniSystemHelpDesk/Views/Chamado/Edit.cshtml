@@ -17,39 +17,7 @@
         @Html.HiddenFor(model => model.ID_CHAMADO)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CHAMADO, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CHAMADO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CHAMADO, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DATA_CRIACAO_CHAMADO, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DATA_CRIACAO_CHAMADO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DATA_CRIACAO_CHAMADO, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.COMENTARIOS, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.COMENTARIOS, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.COMENTARIOS, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ID_USUARIOS_RESP, "ID_USUARIOS_RESP", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ID_USUARIOS_RESP", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ID_USUARIOS_RESP, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ID_EQUIPAMENTO, "ID_EQUIPAMENTO", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ID_EQUIPAMENTO, "Equipamento:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ID_EQUIPAMENTO", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ID_EQUIPAMENTO, "", new { @class = "text-danger" })
@@ -57,9 +25,40 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ID_STATUS_CHAMADO, "ID_STATUS_CHAMADO", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CHAMADO, "Descrição do Chamado:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ID_STATUS_CHAMADO", null, htmlAttributes: new { @class = "form-control" })
+                @Html.EditorFor(model => model.CHAMADO, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CHAMADO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.COMENTARIOS, "Comentários:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.COMENTARIOS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.COMENTARIOS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DATA_CRIACAO_CHAMADO, "Data de abertura:", htmlAttributes: new { @style = "display:none", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DATA_CRIACAO_CHAMADO, new { htmlAttributes = new { @style = "display:none", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DATA_CRIACAO_CHAMADO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_USUARIOS_RESP, "Usuário:", htmlAttributes: new { @style = "display:none", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ID_USUARIOS_RESP", null, htmlAttributes: new { @style = "display:none", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ID_USUARIOS_RESP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_STATUS_CHAMADO, "Status: ", htmlAttributes: new { @style = "display:none", @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ID_STATUS_CHAMADO", null, htmlAttributes: new { @style = "display:none", @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ID_STATUS_CHAMADO, "", new { @class = "text-danger" })
             </div>
         </div>

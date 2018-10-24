@@ -10,6 +10,7 @@ using UniSystemHelpDesk.Models;
 
 namespace UniSystemHelpDesk.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class ChamadoTIController : Controller
     {
         private UniSystemBD db = new UniSystemBD();
@@ -88,7 +89,7 @@ namespace UniSystemHelpDesk.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_CHAMADO,CHAMADO,DATA_CRIACAO_CHAMADO,DATA_INICIO_SUPORTE,DATA_FINALIZACAO_CHAMADO,SOLUCAO,COMENTARIOS,ID_USUARIOS_RESP,ID_EQUIPAMENTO,ID_STATUS_CHAMADO")] US_CHAMADOS uS_CHAMADOS)
+        public ActionResult Edit([Bind(Include = "ID_CHAMADO,CHAMADO,DATA_CRIACAO_CHAMADO,DATA_FINALIZACAO_CHAMADO,SOLUCAO,COMENTARIOS,ID_USUARIOS_RESP,ID_EQUIPAMENTO,ID_STATUS_CHAMADO")] US_CHAMADOS uS_CHAMADOS)
         {
             if (ModelState.IsValid)
             {

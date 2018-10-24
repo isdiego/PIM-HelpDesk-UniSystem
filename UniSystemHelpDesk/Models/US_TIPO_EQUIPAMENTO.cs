@@ -14,6 +14,7 @@ namespace UniSystemHelpDesk.Models
     
     public partial class US_TIPO_EQUIPAMENTO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public US_TIPO_EQUIPAMENTO()
         {
             this.US_EQUIPAMENTO = new HashSet<US_EQUIPAMENTO>();
@@ -22,6 +23,7 @@ namespace UniSystemHelpDesk.Models
         public int ID_TIPO_EQUIPAMENTO { get; set; }
         public string TIPO_EQUIPAMENTO { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<US_EQUIPAMENTO> US_EQUIPAMENTO { get; set; }
     }
 }

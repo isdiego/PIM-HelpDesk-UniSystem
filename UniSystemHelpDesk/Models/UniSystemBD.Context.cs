@@ -25,7 +25,6 @@ namespace UniSystemHelpDesk.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<US_CHAMADOS> US_CHAMADOS { get; set; }
         public virtual DbSet<US_EQUIPAMENTO> US_EQUIPAMENTO { get; set; }
         public virtual DbSet<US_SETORES> US_SETORES { get; set; }

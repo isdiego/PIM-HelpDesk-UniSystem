@@ -4,40 +4,41 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                @Html.ActionLink("Voltar", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+            </ul>
+        </div>
+    </div>
+</div>
+<h2>Chamados Abertos</h2>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CHAMADO)
+            @Html.DisplayName("Descrição do chamado") 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DATA_CRIACAO_CHAMADO)
+            @Html.DisplayName("Data de criação") 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DATA_INICIO_SUPORTE)
+            @Html.DisplayName("Data de finalização") 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DATA_FINALIZACAO_CHAMADO)
+            @Html.DisplayName("Descrição da solução") 
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SOLUCAO)
+            @Html.DisplayName("Comentários")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.COMENTARIOS)
+            @Html.DisplayName("Equipamento")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.US_EQUIPAMENTO.EQUIPAMENTO)
+            @Html.DisplayName("Status")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.US_STATUS.STATUS_CHAMADO)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.US_USUARIOS.NOME_USUARIO)
+            @Html.DisplayName("Usuário")
         </th>
         <th></th>
     </tr>
@@ -49,9 +50,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DATA_CRIACAO_CHAMADO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DATA_INICIO_SUPORTE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DATA_FINALIZACAO_CHAMADO)
@@ -72,9 +70,9 @@
             @Html.DisplayFor(modelItem => item.US_USUARIOS.NOME_USUARIO)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID_CHAMADO }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID_CHAMADO }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID_CHAMADO })
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID_CHAMADO }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ID_CHAMADO }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.ID_CHAMADO })
         </td>
     </tr>
 }

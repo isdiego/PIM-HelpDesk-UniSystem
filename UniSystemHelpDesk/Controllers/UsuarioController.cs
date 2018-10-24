@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace UniSystemHelpDesk.Controllers
 {
-    [Authorize(Roles="Usuario")]
+    [Authorize(Roles="Usuário")]
     public class UsuarioController : Controller
     {
         

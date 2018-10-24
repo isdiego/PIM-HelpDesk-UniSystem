@@ -4,26 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="UniSystemBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
+      <Schema Namespace="UniSystemHelpDeskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="US_CHAMADOS">
           <Key>
             <PropertyRef Name="ID_CHAMADO" />
           </Key>
           <Property Name="ID_CHAMADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CHAMADO" Type="varchar" MaxLength="255" />
-          <Property Name="DATA_CRIACAO_CHAMADO" Type="datetime" />
-          <Property Name="DATA_INICIO_SUPORTE" Type="datetime" />
-          <Property Name="DATA_FINALIZACAO_CHAMADO" Type="datetime" />
+          <Property Name="DATA_CRIACAO_CHAMADO" Type="date" />
+          <Property Name="DATA_INICIO_SUPORTE" Type="date" />
+          <Property Name="DATA_FINALIZACAO_CHAMADO" Type="date" />
           <Property Name="SOLUCAO" Type="varchar" MaxLength="255" />
           <Property Name="COMENTARIOS" Type="varchar" MaxLength="50" />
           <Property Name="ID_USUARIOS_RESP" Type="int" />
@@ -150,8 +140,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="UniSystemBDModelStoreContainer">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="UniSystemHelpDeskModelStoreContainer">
           <EntitySet Name="US_CHAMADOS" EntityType="Self.US_CHAMADOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="US_EQUIPAMENTO" EntityType="Self.US_EQUIPAMENTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="US_SETORES" EntityType="Self.US_SETORES" Schema="dbo" store:Type="Tables" />
@@ -188,26 +177,16 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="UniSystemBDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
+      <Schema Namespace="UniSystemHelpDeskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="US_CHAMADOS">
           <Key>
             <PropertyRef Name="ID_CHAMADO" />
           </Key>
           <Property Name="ID_CHAMADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CHAMADO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="DATA_CRIACAO_CHAMADO" Type="DateTime" Precision="3" />
-          <Property Name="DATA_INICIO_SUPORTE" Type="DateTime" Precision="3" />
-          <Property Name="DATA_FINALIZACAO_CHAMADO" Type="DateTime" Precision="3" />
+          <Property Name="DATA_CRIACAO_CHAMADO" Type="DateTime" Precision="0" />
+          <Property Name="DATA_INICIO_SUPORTE" Type="DateTime" Precision="0" />
+          <Property Name="DATA_FINALIZACAO_CHAMADO" Type="DateTime" Precision="0" />
           <Property Name="SOLUCAO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="COMENTARIOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ID_USUARIOS_RESP" Type="Int32" />
@@ -347,7 +326,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="UniSystemBD" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="US_CHAMADOS" EntityType="Self.US_CHAMADOS" />
           <EntitySet Name="US_EQUIPAMENTO" EntityType="Self.US_EQUIPAMENTO" />
           <EntitySet Name="US_SETORES" EntityType="Self.US_SETORES" />
@@ -385,20 +363,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UniSystemBDModelStoreContainer" CdmEntityContainer="UniSystemBD">
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="UniSystemBDModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="UniSystemHelpDeskModelStoreContainer" CdmEntityContainer="UniSystemBD">
           <EntitySetMapping Name="US_CHAMADOS">
-            <EntityTypeMapping TypeName="UniSystemBDModel.US_CHAMADOS">
+            <EntityTypeMapping TypeName="UniSystemHelpDeskModel.US_CHAMADOS">
               <MappingFragment StoreEntitySet="US_CHAMADOS">
                 <ScalarProperty Name="ID_CHAMADO" ColumnName="ID_CHAMADO" />
                 <ScalarProperty Name="CHAMADO" ColumnName="CHAMADO" />
@@ -414,7 +381,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="US_EQUIPAMENTO">
-            <EntityTypeMapping TypeName="UniSystemBDModel.US_EQUIPAMENTO">
+            <EntityTypeMapping TypeName="UniSystemHelpDeskModel.US_EQUIPAMENTO">
               <MappingFragment StoreEntitySet="US_EQUIPAMENTO">
                 <ScalarProperty Name="ID_EQUIPAMENTO" ColumnName="ID_EQUIPAMENTO" />
                 <ScalarProperty Name="EQUIPAMENTO" ColumnName="EQUIPAMENTO" />
@@ -424,7 +391,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="US_SETORES">
-            <EntityTypeMapping TypeName="UniSystemBDModel.US_SETORES">
+            <EntityTypeMapping TypeName="UniSystemHelpDeskModel.US_SETORES">
               <MappingFragment StoreEntitySet="US_SETORES">
                 <ScalarProperty Name="ID_SETOR" ColumnName="ID_SETOR" />
                 <ScalarProperty Name="SETOR" ColumnName="SETOR" />
@@ -432,7 +399,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="US_STATUS">
-            <EntityTypeMapping TypeName="UniSystemBDModel.US_STATUS">
+            <EntityTypeMapping TypeName="UniSystemHelpDeskModel.US_STATUS">
               <MappingFragment StoreEntitySet="US_STATUS">
                 <ScalarProperty Name="ID_STATUS_CHAMADO" ColumnName="ID_STATUS_CHAMADO" />
                 <ScalarProperty Name="STATUS_CHAMADO" ColumnName="STATUS_CHAMADO" />
@@ -440,7 +407,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="US_TIPO_EQUIPAMENTO">
-            <EntityTypeMapping TypeName="UniSystemBDModel.US_TIPO_EQUIPAMENTO">
+            <EntityTypeMapping TypeName="UniSystemHelpDeskModel.US_TIPO_EQUIPAMENTO">
               <MappingFragment StoreEntitySet="US_TIPO_EQUIPAMENTO">
                 <ScalarProperty Name="ID_TIPO_EQUIPAMENTO" ColumnName="ID_TIPO_EQUIPAMENTO" />
                 <ScalarProperty Name="TIPO_EQUIPAMENTO" ColumnName="TIPO_EQUIPAMENTO" />
@@ -448,7 +415,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="US_TIPO_USUARIO">
-            <EntityTypeMapping TypeName="UniSystemBDModel.US_TIPO_USUARIO">
+            <EntityTypeMapping TypeName="UniSystemHelpDeskModel.US_TIPO_USUARIO">
               <MappingFragment StoreEntitySet="US_TIPO_USUARIO">
                 <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
                 <ScalarProperty Name="TIPO_USUARIO" ColumnName="TIPO_USUARIO" />
@@ -456,7 +423,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="US_USUARIOS">
-            <EntityTypeMapping TypeName="UniSystemBDModel.US_USUARIOS">
+            <EntityTypeMapping TypeName="UniSystemHelpDeskModel.US_USUARIOS">
               <MappingFragment StoreEntitySet="US_USUARIOS">
                 <ScalarProperty Name="ID_USUARIOS" ColumnName="ID_USUARIOS" />
                 <ScalarProperty Name="NOME_USUARIO" ColumnName="NOME_USUARIO" />
@@ -481,7 +448,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

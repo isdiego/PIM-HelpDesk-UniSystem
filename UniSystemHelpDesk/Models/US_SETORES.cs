@@ -14,6 +14,7 @@ namespace UniSystemHelpDesk.Models
     
     public partial class US_SETORES
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public US_SETORES()
         {
             this.US_USUARIOS = new HashSet<US_USUARIOS>();
@@ -22,6 +23,7 @@ namespace UniSystemHelpDesk.Models
         public int ID_SETOR { get; set; }
         public string SETOR { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<US_USUARIOS> US_USUARIOS { get; set; }
     }
 }

@@ -1,24 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="UniSystemBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
+<Schema Namespace="UniSystemHelpDeskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="US_CHAMADOS">
     <Key>
       <PropertyRef Name="ID_CHAMADO" />
     </Key>
     <Property Name="ID_CHAMADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CHAMADO" Type="varchar" MaxLength="255" />
-    <Property Name="DATA_CRIACAO_CHAMADO" Type="datetime" />
-    <Property Name="DATA_INICIO_SUPORTE" Type="datetime" />
-    <Property Name="DATA_FINALIZACAO_CHAMADO" Type="datetime" />
+    <Property Name="DATA_CRIACAO_CHAMADO" Type="date" />
+    <Property Name="DATA_INICIO_SUPORTE" Type="date" />
+    <Property Name="DATA_FINALIZACAO_CHAMADO" Type="date" />
     <Property Name="SOLUCAO" Type="varchar" MaxLength="255" />
     <Property Name="COMENTARIOS" Type="varchar" MaxLength="50" />
     <Property Name="ID_USUARIOS_RESP" Type="int" />
@@ -145,8 +135,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="UniSystemBDModelStoreContainer">
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  <EntityContainer Name="UniSystemHelpDeskModelStoreContainer">
     <EntitySet Name="US_CHAMADOS" EntityType="Self.US_CHAMADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="US_EQUIPAMENTO" EntityType="Self.US_EQUIPAMENTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="US_SETORES" EntityType="Self.US_SETORES" Schema="dbo" store:Type="Tables" />

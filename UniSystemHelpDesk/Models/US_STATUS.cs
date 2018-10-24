@@ -14,6 +14,7 @@ namespace UniSystemHelpDesk.Models
     
     public partial class US_STATUS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public US_STATUS()
         {
             this.US_CHAMADOS = new HashSet<US_CHAMADOS>();
@@ -22,6 +23,7 @@ namespace UniSystemHelpDesk.Models
         public int ID_STATUS_CHAMADO { get; set; }
         public string STATUS_CHAMADO { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<US_CHAMADOS> US_CHAMADOS { get; set; }
     }
 }

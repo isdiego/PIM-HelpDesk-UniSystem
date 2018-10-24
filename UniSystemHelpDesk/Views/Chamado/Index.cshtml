@@ -25,7 +25,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Descrição do chamado") 
+            @Html.DisplayName("Cód chamado")
+        </th>
+        <th>
+            @Html.DisplayName("Descrição do chamado")
         </th>
         <th>
             @Html.DisplayName("Data de abertura")
@@ -37,7 +40,7 @@
             @Html.DisplayName("Status")
         </th>
         <th>
-            @Html.DisplayName("Comentarios")
+            @Html.DisplayName("Comentários")
         </th>
         <th>
             @Html.DisplayName("Usuário")
@@ -47,6 +50,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_CHAMADO)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.CHAMADO)
         </td>
@@ -66,8 +72,8 @@
             @Html.DisplayFor(modelItem => item.US_USUARIOS.NOME_USUARIO)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.ID_CHAMADO }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.ID_CHAMADO })
+            @Html.ActionLink("Editar", "Edit", new { id = item.ID_CHAMADO }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.ID_CHAMADO })
         </td>
     </tr>
 }

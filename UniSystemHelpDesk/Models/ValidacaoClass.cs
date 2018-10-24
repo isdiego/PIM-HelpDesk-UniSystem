@@ -36,11 +36,19 @@ namespace UniSystemHelpDesk.Models
         [Required(ErrorMessage = "Preecha o campo", AllowEmptyStrings = false)]
         public int ID_EQUIPAMENTO { get; set; }
 
+        [Display(Name = "Data de Criação:")]
         [DataType(DataType.Date)]
-        public string DATA_CRIACAO_CHAMADO { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DATA_CRIACAO_CHAMADO { get; set; }
+
+        [Display(Name = "Data de Finalização:")]
         [DataType(DataType.Date)]
-        public string DATA_FINALIZACAO_CHAMADO { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DATA_FINALIZACAO_CHAMADO { get; set; }
+
+        [Display(Name = "Data de Suporte:")]
         [DataType(DataType.Date)]
-        public string DATA_INICIO_SUPORTE { get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DATA_INICIO_SUPORTE { get; set; }
     }
 }

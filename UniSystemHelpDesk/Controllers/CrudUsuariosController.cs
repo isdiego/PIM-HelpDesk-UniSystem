@@ -10,7 +10,7 @@ using UniSystemHelpDesk.Models;
 
 namespace UniSystemHelpDesk.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Administrador")]
     public class CrudUsuariosController : Controller
     {
         private UniSystemBD db = new UniSystemBD();
