@@ -36,6 +36,7 @@ namespace UniSystemHelpDesk.Models
         [Required(ErrorMessage = "Preecha o campo", AllowEmptyStrings = false)]
         public int ID_EQUIPAMENTO { get; set; }
 
+        [Required(ErrorMessage = "Preecha o campo", AllowEmptyStrings = false)]
         [Display(Name = "Data de Criação:")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
