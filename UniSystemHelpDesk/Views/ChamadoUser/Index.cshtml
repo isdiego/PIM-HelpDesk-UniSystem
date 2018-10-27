@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Meus Chamados</h2>
@@ -17,7 +18,10 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                @Html.ActionLink("Novo Chamado", "Index", "Chamado/Create", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Novo Chamado", "Index", "ChamadoUser/Create", new { area = "" }, new { @class = "navbar-brand" })
+            </ul>
+            <ul class="nav navbar-nav">
+                @Html.ActionLink("Sair", "Logout", "Conta", new { area = "" }, new { @class = "navbar-brand" })
             </ul>
         </div>
     </div>

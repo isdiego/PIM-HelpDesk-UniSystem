@@ -4,6 +4,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>Chamados Abertos</h2>
+
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-collapse collapse">
@@ -13,23 +16,17 @@
         </div>
     </div>
 </div>
-<h2>Chamados Abertos</h2>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Descrição do chamado") 
+            @Html.DisplayName("Descrição do chamado")
         </th>
         <th>
-            @Html.DisplayName("Data de criação") 
+            @Html.DisplayName("Data de criação")
         </th>
         <th>
-            @Html.DisplayName("Data de finalização") 
-        </th>
-        <th>
-            @Html.DisplayName("Descrição da solução") 
-        </th>
-        <th>
-            @Html.DisplayName("Comentários")
+            @Html.DisplayName("Data de finalização")
         </th>
         <th>
             @Html.DisplayName("Equipamento")
@@ -55,12 +52,6 @@
             @Html.DisplayFor(modelItem => item.DATA_FINALIZACAO_CHAMADO)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SOLUCAO)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.COMENTARIOS)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.US_EQUIPAMENTO.EQUIPAMENTO)
         </td>
         <td>
@@ -70,7 +61,7 @@
             @Html.DisplayFor(modelItem => item.US_USUARIOS.NOME_USUARIO)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.ID_CHAMADO }) |
+            @Html.ActionLink("Atender", "Edit", new { id=item.ID_CHAMADO }) |
             @Html.ActionLink("Detalhes", "Details", new { id=item.ID_CHAMADO }) |
             @Html.ActionLink("Deletar", "Delete", new { id=item.ID_CHAMADO })
         </td>

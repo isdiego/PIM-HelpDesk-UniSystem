@@ -13,7 +13,7 @@ namespace UniSystemHelpDesk.Controllers
     [Authorize(Roles = "Usuário")]
     public class ChamadoController : Controller
     {
-        private UniSystemBD db = new UniSystemBD();
+        private BDUniSystemHelpDesk db = new BDUniSystemHelpDesk();
 
         // GET: Chamado
         public ActionResult Index()

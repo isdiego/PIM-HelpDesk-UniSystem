@@ -14,7 +14,6 @@ namespace UniSystemHelpDesk.Models
     
     public partial class US_TIPO_USUARIO
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public US_TIPO_USUARIO()
         {
             this.US_USUARIOS = new HashSet<US_USUARIOS>();
@@ -23,7 +22,6 @@ namespace UniSystemHelpDesk.Models
         public int ID_TIPO_USUARIO { get; set; }
         public string TIPO_USUARIO { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<US_USUARIOS> US_USUARIOS { get; set; }
     }
 }

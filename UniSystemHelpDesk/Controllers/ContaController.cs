@@ -10,7 +10,7 @@ namespace UniSystemHelpDesk.Controllers
 {
     public class ContaController : Controller
     {
-        UniSystemBD db = new UniSystemBD ();
+        BDUniSystemHelpDesk db = new BDUniSystemHelpDesk ();
 
         public ActionResult Login()
         {

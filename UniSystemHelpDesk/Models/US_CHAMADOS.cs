@@ -24,9 +24,11 @@ namespace UniSystemHelpDesk.Models
         public Nullable<int> ID_USUARIOS_RESP { get; set; }
         public Nullable<int> ID_EQUIPAMENTO { get; set; }
         public Nullable<int> ID_STATUS_CHAMADO { get; set; }
+        public Nullable<int> ID_TECNICO { get; set; }
     
         public virtual US_EQUIPAMENTO US_EQUIPAMENTO { get; set; }
         public virtual US_STATUS US_STATUS { get; set; }
+        public virtual US_TECNICO US_TECNICO { get; set; }
         public virtual US_USUARIOS US_USUARIOS { get; set; }
     }
 }

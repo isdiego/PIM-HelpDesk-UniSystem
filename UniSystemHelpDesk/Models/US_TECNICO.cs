@@ -12,16 +12,16 @@ namespace UniSystemHelpDesk.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class US_TIPO_EQUIPAMENTO
+    public partial class US_TECNICO
     {
-        public US_TIPO_EQUIPAMENTO()
+        public US_TECNICO()
         {
-            this.US_EQUIPAMENTO = new HashSet<US_EQUIPAMENTO>();
+            this.US_CHAMADOS = new HashSet<US_CHAMADOS>();
         }
     
-        public int ID_TIPO_EQUIPAMENTO { get; set; }
-        public string TIPO_EQUIPAMENTO { get; set; }
+        public int ID_TECNICO { get; set; }
+        public string TECNICO { get; set; }
     
-        public virtual ICollection<US_EQUIPAMENTO> US_EQUIPAMENTO { get; set; }
+        public virtual ICollection<US_CHAMADOS> US_CHAMADOS { get; set; }
     }
 }

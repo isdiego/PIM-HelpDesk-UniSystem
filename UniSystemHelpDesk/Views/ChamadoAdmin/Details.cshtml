@@ -2,16 +2,24 @@
 
 @{
     ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalhes do Chamado</h2>
 
 <div>
-    <h4>US_CHAMADOS</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CHAMADO)
+            @Html.DisplayName("Cód chamado:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_CHAMADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Descrição Chamado:")
         </dt>
 
         <dd>
@@ -19,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DATA_CRIACAO_CHAMADO)
+            @Html.DisplayName("Data de Criação:")
         </dt>
 
         <dd>
@@ -27,7 +35,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DATA_FINALIZACAO_CHAMADO)
+            @Html.DisplayName("Data de Inicio Suporte:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATA_INICIO_SUPORTE)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Data de Finalização:")
         </dt>
 
         <dd>
@@ -35,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SOLUCAO)
+            @Html.DisplayName("Solução Chamado:")
         </dt>
 
         <dd>
@@ -43,7 +59,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.COMENTARIOS)
+            @Html.DisplayName("Comentários:")
         </dt>
 
         <dd>
@@ -51,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.US_EQUIPAMENTO.EQUIPAMENTO)
+            @Html.DisplayName("Equipamento:")
         </dt>
 
         <dd>
@@ -59,7 +75,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.US_STATUS.STATUS_CHAMADO)
+            @Html.DisplayName("Status:")
         </dt>
 
         <dd>
@@ -67,7 +83,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.US_USUARIOS.NOME_USUARIO)
+            @Html.DisplayName("Atendente:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.US_TECNICO.TECNICO)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Usuário:")
         </dt>
 
         <dd>
@@ -77,6 +101,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_CHAMADO }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar Chamado", "Edit", new { id = Model.ID_CHAMADO }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>

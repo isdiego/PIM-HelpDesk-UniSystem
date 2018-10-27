@@ -13,10 +13,10 @@ namespace UniSystemHelpDesk.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UniSystemBD : DbContext
+    public partial class BDUniSystemHelpDesk : DbContext
     {
-        public UniSystemBD()
-            : base("name=UniSystemBD")
+        public BDUniSystemHelpDesk()
+            : base("name=BDUniSystemHelpDesk")
         {
         }
     
@@ -29,6 +29,7 @@ namespace UniSystemHelpDesk.Models
         public virtual DbSet<US_EQUIPAMENTO> US_EQUIPAMENTO { get; set; }
         public virtual DbSet<US_SETORES> US_SETORES { get; set; }
         public virtual DbSet<US_STATUS> US_STATUS { get; set; }
+        public virtual DbSet<US_TECNICO> US_TECNICO { get; set; }
         public virtual DbSet<US_TIPO_EQUIPAMENTO> US_TIPO_EQUIPAMENTO { get; set; }
         public virtual DbSet<US_TIPO_USUARIO> US_TIPO_USUARIO { get; set; }
         public virtual DbSet<US_USUARIOS> US_USUARIOS { get; set; }

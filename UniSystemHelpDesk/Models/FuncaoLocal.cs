@@ -47,7 +47,7 @@ namespace UniSystemHelpDesk.Models
 
         public override string[] GetRolesForUser(string username)
         {
-            UniSystemBD db = new UniSystemBD();
+            BDUniSystemHelpDesk db = new BDUniSystemHelpDesk();
             string data = db.US_USUARIOS.Where(a => a.EMAIL_USUARIO == username).SingleOrDefault().US_TIPO_USUARIO.TIPO_USUARIO;
             string[] resultado = { data };
             return resultado;

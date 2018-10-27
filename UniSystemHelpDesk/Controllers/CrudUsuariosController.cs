@@ -13,7 +13,7 @@ namespace UniSystemHelpDesk.Controllers
     [Authorize(Roles = "Administrador")]
     public class CrudUsuariosController : Controller
     {
-        private UniSystemBD db = new UniSystemBD();
+        private BDUniSystemHelpDesk db = new BDUniSystemHelpDesk();
 
         // GET: CrudUsuarios
         public ActionResult Index()
