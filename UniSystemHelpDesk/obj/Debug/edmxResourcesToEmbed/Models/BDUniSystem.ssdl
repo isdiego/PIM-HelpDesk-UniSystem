@@ -71,6 +71,22 @@
     <Property Name="ID_TIPO_USUARIO" Type="int" />
     <Property Name="ID_SETOR" Type="int" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BDUniSystemHelpDesk.dbo.ConsultaUS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ConsultaUS">
+    <Key>
+      <PropertyRef Name="NOME_USUARIO" />
+      <PropertyRef Name="ID_CHAMADO" />
+      <PropertyRef Name="STATUS_CHAMADO" />
+    </Key>
+    <Property Name="NOME_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_CHAMADO" Type="int" Nullable="false" />
+    <Property Name="CHAMADO" Type="varchar" MaxLength="255" />
+    <Property Name="DATA_CRIACAO_CHAMADO" Type="date" />
+    <Property Name="DATA_FINALIZACAO_CHAMADO" Type="date" />
+    <Property Name="STATUS_CHAMADO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TECNICO" Type="varchar" MaxLength="30" />
+  </EntityType>
   <Association Name="FK__US_CHAMAD__ID_EQ__21B6055D">
     <End Role="US_EQUIPAMENTO" Type="Self.US_EQUIPAMENTO" Multiplicity="0..1" />
     <End Role="US_CHAMADOS" Type="Self.US_CHAMADOS" Multiplicity="*" />
@@ -164,6 +180,17 @@
     <EntitySet Name="US_TIPO_EQUIPAMENTO" EntityType="Self.US_TIPO_EQUIPAMENTO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="US_TIPO_USUARIO" EntityType="Self.US_TIPO_USUARIO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="US_USUARIOS" EntityType="Self.US_USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConsultaUS" EntityType="Self.ConsultaUS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ConsultaUS].[NOME_USUARIO] AS [NOME_USUARIO], 
+    [ConsultaUS].[ID_CHAMADO] AS [ID_CHAMADO], 
+    [ConsultaUS].[CHAMADO] AS [CHAMADO], 
+    [ConsultaUS].[DATA_CRIACAO_CHAMADO] AS [DATA_CRIACAO_CHAMADO], 
+    [ConsultaUS].[DATA_FINALIZACAO_CHAMADO] AS [DATA_FINALIZACAO_CHAMADO], 
+    [ConsultaUS].[STATUS_CHAMADO] AS [STATUS_CHAMADO], 
+    [ConsultaUS].[TECNICO] AS [TECNICO]
+    FROM [dbo].[ConsultaUS] AS [ConsultaUS]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__US_CHAMAD__ID_EQ__21B6055D" Association="Self.FK__US_CHAMAD__ID_EQ__21B6055D">
       <End Role="US_EQUIPAMENTO" EntitySet="US_EQUIPAMENTO" />
       <End Role="US_CHAMADOS" EntitySet="US_CHAMADOS" />

@@ -80,5 +80,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ConsultaUS">
+      <EntityTypeMapping TypeName="BDUniSystemHelpDeskModel.ConsultaU">
+        <MappingFragment StoreEntitySet="ConsultaUS">
+          <ScalarProperty Name="TECNICO" ColumnName="TECNICO" />
+          <ScalarProperty Name="STATUS_CHAMADO" ColumnName="STATUS_CHAMADO" />
+          <ScalarProperty Name="DATA_FINALIZACAO_CHAMADO" ColumnName="DATA_FINALIZACAO_CHAMADO" />
+          <ScalarProperty Name="DATA_CRIACAO_CHAMADO" ColumnName="DATA_CRIACAO_CHAMADO" />
+          <ScalarProperty Name="CHAMADO" ColumnName="CHAMADO" />
+          <ScalarProperty Name="ID_CHAMADO" ColumnName="ID_CHAMADO" />
+          <ScalarProperty Name="NOME_USUARIO" ColumnName="NOME_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

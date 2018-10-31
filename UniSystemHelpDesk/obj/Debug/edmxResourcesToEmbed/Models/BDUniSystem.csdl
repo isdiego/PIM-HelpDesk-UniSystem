@@ -206,5 +206,20 @@
       <End Role="US_TIPO_USUARIO" EntitySet="US_TIPO_USUARIO" />
       <End Role="US_USUARIOS" EntitySet="US_USUARIOS" />
     </AssociationSet>
+    <EntitySet Name="ConsultaUS" EntityType="BDUniSystemHelpDeskModel.ConsultaU" />
   </EntityContainer>
+  <EntityType Name="ConsultaU">
+    <Key>
+      <PropertyRef Name="NOME_USUARIO" />
+      <PropertyRef Name="ID_CHAMADO" />
+      <PropertyRef Name="STATUS_CHAMADO" />
+    </Key>
+    <Property Name="NOME_USUARIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_CHAMADO" Type="Int32" Nullable="false" />
+    <Property Name="CHAMADO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_CRIACAO_CHAMADO" Type="DateTime" Precision="0" />
+    <Property Name="DATA_FINALIZACAO_CHAMADO" Type="DateTime" Precision="0" />
+    <Property Name="STATUS_CHAMADO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TECNICO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

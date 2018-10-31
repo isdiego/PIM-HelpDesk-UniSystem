@@ -33,5 +33,6 @@ namespace UniSystemHelpDesk.Models
         public virtual DbSet<US_TIPO_EQUIPAMENTO> US_TIPO_EQUIPAMENTO { get; set; }
         public virtual DbSet<US_TIPO_USUARIO> US_TIPO_USUARIO { get; set; }
         public virtual DbSet<US_USUARIOS> US_USUARIOS { get; set; }
+        public virtual DbSet<ConsultaU> ConsultaUS { get; set; }
     }
 }
