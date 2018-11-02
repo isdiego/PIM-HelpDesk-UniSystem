@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Consulta de chamados" Height="642.537" Width="1276.865" Loaded="frmPrincipal_Loaded">
     <Grid>
-        <DataGrid x:Name="grid" HorizontalAlignment="Left" AutoGenerateColumns="true" AutoGeneratingColumn="AutoGeneratingColumn" SelectionChanged="grid_SelectionChanged" Width="1249" Margin="10,0,0,49">
+        <DataGrid x:Name="grid" ColumnWidth="177" HorizontalAlignment="Left" AutoGenerateColumns="true" AutoGeneratingColumn="AutoGeneratingColumn" SelectionChanged="grid_SelectionChanged" Width="1249" Margin="10,0,0,217">
+            
         </DataGrid>
-
+        <Button x:Name="btnAtualizar" Content="Atualizar" HorizontalAlignment="Left" Margin="594,495,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

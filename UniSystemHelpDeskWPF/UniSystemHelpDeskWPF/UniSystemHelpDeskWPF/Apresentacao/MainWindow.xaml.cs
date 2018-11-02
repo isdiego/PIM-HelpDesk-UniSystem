@@ -52,6 +52,41 @@ namespace UniSystemHelpDeskWPF
                 (e.Column as DataGridTextColumn).Binding.StringFormat = "dd/MM/yyyy";
             if (e.PropertyName == "DATA_CRIACAO_CHAMADO")
                 (e.Column as DataGridTextColumn).Binding.StringFormat = "dd/MM/yyyy";
+
+            //Alterar Nome das colunas datagridviewer
+            if (e.PropertyName.StartsWith("TECNICO"))
+                {
+                    e.Column.Header = "Técnico";
+                }
+            if (e.PropertyName.StartsWith("STATUS_CHAMADO"))
+            {
+                e.Column.Header = "Status";
+            }
+            if (e.PropertyName.StartsWith("DATA_FINALIZACAO"))
+            {
+                e.Column.Header = "Data finalização";
+            }
+            if (e.PropertyName.StartsWith("DATA_CRIACAO_CHAMADO"))
+            {
+                e.Column.Header = "Data abertura";
+            }
+            if (e.PropertyName.StartsWith("CHAMADO"))
+            {
+                e.Column.Header = "Descrição de chamado";
+            }
+            if (e.PropertyName.StartsWith("ID_CHAMADO"))
+            {
+                e.Column.Header = "Cód chamado";
+            }
+            if (e.PropertyName.StartsWith("NOME_USUARIO"))
+            {
+                e.Column.Header = "Usuário";
+            }
+        }
+
+        private void btnAtualizar_Click(object sender, RoutedEventArgs e)
+        {
+            frmPrincipal_Loaded(sender, e);
         }
     }
 }

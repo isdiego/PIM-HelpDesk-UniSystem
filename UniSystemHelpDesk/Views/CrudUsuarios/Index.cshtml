@@ -7,16 +7,12 @@
 <h2>Index</h2>
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                @Html.ActionLink("Voltar", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
-            </ul>
+        <div class="navbar-header">
+            @Html.ActionLink("Voltar", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Novo Cadastro", "Create", "CrudUsuarios", new { area = "" }, new { @class = "navbar-brand" })
         </div>
     </div>
 </div>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>

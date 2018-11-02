@@ -1,0 +1,20 @@
+﻿.form-group{
+    margin-left:35%;
+    width:800px;
+}
+h2{
+    text-align:center;
+}
+.logop{
+	position: absolute;
+    top:330px;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.logo{
+	height:auto;
+	width: 600px;
+}
+.alilogo{
+    margin:30%;
+}

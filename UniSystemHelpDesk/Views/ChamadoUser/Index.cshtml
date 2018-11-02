@@ -9,20 +9,11 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             @Html.ActionLink("Inicio", "Index", "Usuario/Index", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Novo Chamado", "Index", "ChamadoUser/Create", new { area = "" }, new { @class = "navbar-brand" })
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                @Html.ActionLink("Novo Chamado", "Index", "ChamadoUser/Create", new { area = "" }, new { @class = "navbar-brand" })
-            </ul>
-            <ul class="nav navbar-nav">
-                @Html.ActionLink("Sair", "Logout", "Conta", new { area = "" }, new { @class = "navbar-brand" })
-            </ul>
+        <div>
+            @Html.ActionLink("Sair", "Logout", "Conta", new { area = "" }, new { @class = "navbar-brand" })
         </div>
     </div>
 </div>

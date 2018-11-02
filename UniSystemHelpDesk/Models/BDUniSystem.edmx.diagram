@@ -20,7 +20,7 @@
         <AssociationConnector Association="BDUniSystemHelpDeskModel.FK__US_EQUIPA__ID_TI__1A14E395" ManuallyRouted="false" />
         <AssociationConnector Association="BDUniSystemHelpDeskModel.FK__US_USUARI__ID_SE__15502E78" ManuallyRouted="false" />
         <AssociationConnector Association="BDUniSystemHelpDeskModel.FK__US_USUARI__ID_TI__145C0A3F" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="BDUniSystemHelpDeskModel.ConsultaU" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="BDUniSystemHelpDeskModel.ConsultaU" Width="1.5" PointX="0.75" PointY="4.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
