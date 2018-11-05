@@ -49,5 +49,10 @@ namespace UniSystemHelpDesk.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
+
+        public JsonResult UsuarioDisponivel(string EMAIL_USUARIO)
+        {
+            return Json(!db.US_USUARIOS.Any(x => x.EMAIL_USUARIO == EMAIL_USUARIO), JsonRequestBehavior.AllowGet);
+        }
     }
 }

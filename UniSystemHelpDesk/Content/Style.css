@@ -1,6 +1,18 @@
 ﻿.form-group{
-    margin-left:35%;
-    width:800px;
+    width:900px;
+}
+.form-f{
+    background-color: rgba(0,0,0,0.2);
+    border-radius:4px;
+    width:350px;
+    margin-left:380px;
+}
+.btn-c{
+    margin-left:18%;
+}
+.msg-user{
+    margin-left:3%;
+    font-size:12px;
 }
 h2{
     text-align:center;
@@ -17,4 +29,30 @@ h2{
 }
 .alilogo{
     margin:30%;
+}
+.table-l{
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid #ddd;
+    text-align:center;
+}
+th{
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+td{
+    width:35px;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+.ed-link{
+}
+.btn2{
+    background:red;
+}
+.teste{
+    width:5px;
+    text-align:justify;
+}
+.icons-espa{
+    margin:5px;
 }

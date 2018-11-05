@@ -40,7 +40,7 @@ namespace UniSystemHelpDesk.Controllers
         // GET: ChamadoUser/Create
         public ActionResult Create()
         {
-            ViewBag.ID_EQUIPAMENTO = new SelectList(db.US_EQUIPAMENTO, "ID_EQUIPAMENTO", "EQUIPAMENTO");
+            ViewBag.ID_EQUIPAMENTO = new SelectList(db.US_EQUIPAMENTO, "ID_EQUIPAMENTO", "EQUIPAMENTO") ;
             ViewBag.ID_STATUS_CHAMADO = new SelectList(db.US_STATUS.Where(a => a.STATUS_CHAMADO == "Aberto"), "ID_STATUS_CHAMADO", "STATUS_CHAMADO");
             ViewBag.ID_TECNICO = new SelectList(db.US_TECNICO, "ID_TECNICO", "TECNICO");
             ViewBag.ID_USUARIOS_RESP = new SelectList(db.US_USUARIOS.Where(a => a.EMAIL_USUARIO == User.Identity.Name), "ID_USUARIOS", "NOME_USUARIO");
