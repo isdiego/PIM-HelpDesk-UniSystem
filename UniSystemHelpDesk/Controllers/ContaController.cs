@@ -54,5 +54,9 @@ namespace UniSystemHelpDesk.Controllers
         {
             return Json(!db.US_USUARIOS.Any(x => x.EMAIL_USUARIO == EMAIL_USUARIO), JsonRequestBehavior.AllowGet);
         }
+        public ActionResult sobreunisystem()
+        {
+            return View();
+        }
     }
 }

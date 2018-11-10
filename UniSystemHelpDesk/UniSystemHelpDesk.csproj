@@ -103,14 +103,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\all.css" />
+    <Content Include="Content\all.min.css" />
+    <Content Include="Content\bootstrap-lumen.min.css" />
+    <Content Include="Content\bootstrap-spacelab.min.css" />
     <Content Include="Content\bootstrap-super.css" />
     <Content Include="Content\bootstrap-super.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fontawesome.min.css" />
     <Content Include="Content\img\logounisystem.fw.png" />
+    <Content Include="Content\img\logounisystem2.fw.png" />
+    <Content Include="Content\img\logounisystem3.fw.png" />
+    <Content Include="Content\img\logounisystem5.fw.png" />
+    <Content Include="Content\img\logounisystem6.fw.png" />
+    <Content Include="Content\img\UniSystem Icon.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Style.css" />
     <Content Include="Content\img\The_Godfather.jpg" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Models\BDUniSystem.Context.tt">
@@ -133,6 +146,18 @@
     <Content Include="Models\BDUniSystem.edmx.diagram">
       <DependentUpon>BDUniSystem.edmx</DependentUpon>
     </Content>
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -157,12 +182,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ChamadoAdminController.cs" />
-    <Compile Include="Controllers\ChamadoController.cs" />
-    <Compile Include="Controllers\ChamadoTIController.cs" />
     <Compile Include="Controllers\ChamadoUserController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\CrudUsuariosController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="DAL\ChamadoDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -241,6 +263,7 @@
     <Content Include="Views\ChamadoAdmin\Details.cshtml" />
     <Content Include="Views\ChamadoAdmin\Edit.cshtml" />
     <Content Include="Views\ChamadoAdmin\Index.cshtml" />
+    <Content Include="Views\Conta\sobreunisystem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -30,6 +30,16 @@ h2{
 .alilogo{
     margin:30%;
 }
+.logops{
+	position: absolute;
+    top:400px;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.logos{
+	height:300px;
+	width: 600px;
+}
 .table-l{
     background-color: rgba(0,0,0,0.2);
     border: 1px solid #ddd;
@@ -55,4 +65,41 @@ td{
 }
 .icons-espa{
     margin:5px;
+}
+.btn-new{
+    background-color: #00cccc;
+    color:white;
+    font-weight:bold;
+    border-radius:5px;
+    text-align:center;
+    padding:8px;
+    width:160px;
+}
+.btn-marginr{
+    margin-left:800px;
+}
+.btn-newvs{
+    background-color: #00cccc;
+    color:white;
+    font-weight:bold;
+    border-radius:5px;
+    text-align:center;
+    padding:8px;
+    width:80px;
+}
+.img-logoci{
+    float:left;
+}
+.img-logoi{
+    width:95px;
+    height:50px;
+}
+.historia{
+   margin-top:30px;
+   width:850px;
+   margin-left:130px;
+}
+.p-m{
+     text-align:center;
+     font-size:17px;
 }

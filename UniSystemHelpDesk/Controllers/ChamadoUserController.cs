@@ -18,7 +18,8 @@ namespace UniSystemHelpDesk.Controllers
         // GET: ChamadoUser
         public ActionResult Index()
         {
-            var uS_CHAMADOS = db.US_CHAMADOS.Include(u => u.US_EQUIPAMENTO).Include(u => u.US_STATUS).Include(u => u.US_TECNICO).Include(u => u.US_USUARIOS);
+
+            var uS_CHAMADOS = db.US_CHAMADOS.Include(u => u.US_EQUIPAMENTO).Include(u => u.US_STATUS).Include(u => u.US_TECNICO).Where(a => a.US_USUARIOS.EMAIL_USUARIO == User.Identity.Name);
             return View(uS_CHAMADOS.ToList());
         }
 
