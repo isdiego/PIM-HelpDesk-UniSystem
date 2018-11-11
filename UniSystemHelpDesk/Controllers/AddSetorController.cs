@@ -11,116 +11,107 @@ using UniSystemHelpDesk.Models;
 namespace UniSystemHelpDesk.Controllers
 {
     [Authorize(Roles = "Administrador")]
-    public class CrudUsuariosController : Controller
+    public class AddSetorController : Controller
     {
         private BDUniSystemHelpDesk db = new BDUniSystemHelpDesk();
 
-        // GET: CrudUsuarios
+        // GET: AddSetor
         public ActionResult Index()
         {
-            var uS_USUARIOS = db.US_USUARIOS.Include(u => u.US_SETORES).Include(u => u.US_TIPO_USUARIO);
-            return View(uS_USUARIOS.ToList());
+            return View(db.US_SETORES.ToList());
         }
 
-        // GET: CrudUsuarios/Details/5
+        // GET: AddSetor/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            if (uS_USUARIOS == null)
+            US_SETORES uS_SETORES = db.US_SETORES.Find(id);
+            if (uS_SETORES == null)
             {
                 return HttpNotFound();
             }
-            return View(uS_USUARIOS);
+            return View(uS_SETORES);
         }
 
-        // GET: CrudUsuarios/Create
+        // GET: AddSetor/Create
         public ActionResult Create()
         {
-            ViewBag.ID_SETOR = db.US_SETORES.ToList();
-            ViewBag.ID_TIPO_USUARIO = db.US_TIPO_USUARIO.ToList();
             return View();
         }
 
-        // POST: CrudUsuarios/Create
+        // POST: AddSetor/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_USUARIOS,NOME_USUARIO,EMAIL_USUARIO,SENHA_USUARIO,ID_TIPO_USUARIO,ID_SETOR")] US_USUARIOS uS_USUARIOS)
+        public ActionResult Create([Bind(Include = "ID_SETOR,SETOR")] US_SETORES uS_SETORES)
         {
             if (ModelState.IsValid)
             {
-                db.US_USUARIOS.Add(uS_USUARIOS);
+                db.US_SETORES.Add(uS_SETORES);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_SETOR = new SelectList(db.US_SETORES, "ID_SETOR", "SETOR", uS_USUARIOS.ID_SETOR);
-            ViewBag.ID_TIPO_USUARIO = new SelectList(db.US_TIPO_USUARIO, "ID_TIPO_USUARIO", "TIPO_USUARIO", uS_USUARIOS.ID_TIPO_USUARIO);
-            return View(uS_USUARIOS);
+            return View(uS_SETORES);
         }
 
-        // GET: CrudUsuarios/Edit/5
+        // GET: AddSetor/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            if (uS_USUARIOS == null)
+            US_SETORES uS_SETORES = db.US_SETORES.Find(id);
+            if (uS_SETORES == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_SETOR = new SelectList(db.US_SETORES, "ID_SETOR", "SETOR", uS_USUARIOS.ID_SETOR);
-            ViewBag.ID_TIPO_USUARIO = new SelectList(db.US_TIPO_USUARIO, "ID_TIPO_USUARIO", "TIPO_USUARIO", uS_USUARIOS.ID_TIPO_USUARIO);
-            return View(uS_USUARIOS);
+            return View(uS_SETORES);
         }
 
-        // POST: CrudUsuarios/Edit/5
+        // POST: AddSetor/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_USUARIOS,NOME_USUARIO,EMAIL_USUARIO,SENHA_USUARIO,ID_TIPO_USUARIO,ID_SETOR")] US_USUARIOS uS_USUARIOS)
+        public ActionResult Edit([Bind(Include = "ID_SETOR,SETOR")] US_SETORES uS_SETORES)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(uS_USUARIOS).State = EntityState.Modified;
+                db.Entry(uS_SETORES).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_SETOR = new SelectList(db.US_SETORES, "ID_SETOR", "SETOR", uS_USUARIOS.ID_SETOR);
-            ViewBag.ID_TIPO_USUARIO = new SelectList(db.US_TIPO_USUARIO, "ID_TIPO_USUARIO", "TIPO_USUARIO", uS_USUARIOS.ID_TIPO_USUARIO);
-            return View(uS_USUARIOS);
+            return View(uS_SETORES);
         }
 
-        // GET: CrudUsuarios/Delete/5
+        // GET: AddSetor/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            if (uS_USUARIOS == null)
+            US_SETORES uS_SETORES = db.US_SETORES.Find(id);
+            if (uS_SETORES == null)
             {
                 return HttpNotFound();
             }
-            return View(uS_USUARIOS);
+            return View(uS_SETORES);
         }
 
-        // POST: CrudUsuarios/Delete/5
+        // POST: AddSetor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            db.US_USUARIOS.Remove(uS_USUARIOS);
+            US_SETORES uS_SETORES = db.US_SETORES.Find(id);
+            db.US_SETORES.Remove(uS_SETORES);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

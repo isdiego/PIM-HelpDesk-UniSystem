@@ -11,116 +11,107 @@ using UniSystemHelpDesk.Models;
 namespace UniSystemHelpDesk.Controllers
 {
     [Authorize(Roles = "Administrador")]
-    public class CrudUsuariosController : Controller
+    public class AddTecnicoController : Controller
     {
         private BDUniSystemHelpDesk db = new BDUniSystemHelpDesk();
 
-        // GET: CrudUsuarios
+        // GET: AddTecnico
         public ActionResult Index()
         {
-            var uS_USUARIOS = db.US_USUARIOS.Include(u => u.US_SETORES).Include(u => u.US_TIPO_USUARIO);
-            return View(uS_USUARIOS.ToList());
+            return View(db.US_TECNICO.ToList());
         }
 
-        // GET: CrudUsuarios/Details/5
+        // GET: AddTecnico/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            if (uS_USUARIOS == null)
+            US_TECNICO uS_TECNICO = db.US_TECNICO.Find(id);
+            if (uS_TECNICO == null)
             {
                 return HttpNotFound();
             }
-            return View(uS_USUARIOS);
+            return View(uS_TECNICO);
         }
 
-        // GET: CrudUsuarios/Create
+        // GET: AddTecnico/Create
         public ActionResult Create()
         {
-            ViewBag.ID_SETOR = db.US_SETORES.ToList();
-            ViewBag.ID_TIPO_USUARIO = db.US_TIPO_USUARIO.ToList();
             return View();
         }
 
-        // POST: CrudUsuarios/Create
+        // POST: AddTecnico/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID_USUARIOS,NOME_USUARIO,EMAIL_USUARIO,SENHA_USUARIO,ID_TIPO_USUARIO,ID_SETOR")] US_USUARIOS uS_USUARIOS)
+        public ActionResult Create([Bind(Include = "ID_TECNICO,TECNICO")] US_TECNICO uS_TECNICO)
         {
             if (ModelState.IsValid)
             {
-                db.US_USUARIOS.Add(uS_USUARIOS);
+                db.US_TECNICO.Add(uS_TECNICO);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ID_SETOR = new SelectList(db.US_SETORES, "ID_SETOR", "SETOR", uS_USUARIOS.ID_SETOR);
-            ViewBag.ID_TIPO_USUARIO = new SelectList(db.US_TIPO_USUARIO, "ID_TIPO_USUARIO", "TIPO_USUARIO", uS_USUARIOS.ID_TIPO_USUARIO);
-            return View(uS_USUARIOS);
+            return View(uS_TECNICO);
         }
 
-        // GET: CrudUsuarios/Edit/5
+        // GET: AddTecnico/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            if (uS_USUARIOS == null)
+            US_TECNICO uS_TECNICO = db.US_TECNICO.Find(id);
+            if (uS_TECNICO == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ID_SETOR = new SelectList(db.US_SETORES, "ID_SETOR", "SETOR", uS_USUARIOS.ID_SETOR);
-            ViewBag.ID_TIPO_USUARIO = new SelectList(db.US_TIPO_USUARIO, "ID_TIPO_USUARIO", "TIPO_USUARIO", uS_USUARIOS.ID_TIPO_USUARIO);
-            return View(uS_USUARIOS);
+            return View(uS_TECNICO);
         }
 
-        // POST: CrudUsuarios/Edit/5
+        // POST: AddTecnico/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID_USUARIOS,NOME_USUARIO,EMAIL_USUARIO,SENHA_USUARIO,ID_TIPO_USUARIO,ID_SETOR")] US_USUARIOS uS_USUARIOS)
+        public ActionResult Edit([Bind(Include = "ID_TECNICO,TECNICO")] US_TECNICO uS_TECNICO)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(uS_USUARIOS).State = EntityState.Modified;
+                db.Entry(uS_TECNICO).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ID_SETOR = new SelectList(db.US_SETORES, "ID_SETOR", "SETOR", uS_USUARIOS.ID_SETOR);
-            ViewBag.ID_TIPO_USUARIO = new SelectList(db.US_TIPO_USUARIO, "ID_TIPO_USUARIO", "TIPO_USUARIO", uS_USUARIOS.ID_TIPO_USUARIO);
-            return View(uS_USUARIOS);
+            return View(uS_TECNICO);
         }
 
-        // GET: CrudUsuarios/Delete/5
+        // GET: AddTecnico/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            if (uS_USUARIOS == null)
+            US_TECNICO uS_TECNICO = db.US_TECNICO.Find(id);
+            if (uS_TECNICO == null)
             {
                 return HttpNotFound();
             }
-            return View(uS_USUARIOS);
+            return View(uS_TECNICO);
         }
 
-        // POST: CrudUsuarios/Delete/5
+        // POST: AddTecnico/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            US_USUARIOS uS_USUARIOS = db.US_USUARIOS.Find(id);
-            db.US_USUARIOS.Remove(uS_USUARIOS);
+            US_TECNICO uS_TECNICO = db.US_TECNICO.Find(id);
+            db.US_TECNICO.Remove(uS_TECNICO);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

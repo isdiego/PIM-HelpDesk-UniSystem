@@ -10,6 +10,17 @@
 .btn-c{
     margin-left:18%;
 }
+.btn-l{
+    margin-left:14%;
+}
+.btn-f{
+    margin-left:8%;
+}
+.btn-d{
+    margin-left:90%;
+    background-color:#ff4d4d;
+    color:white;
+}
 .msg-user{
     margin-left:3%;
     font-size:12px;
@@ -54,14 +65,24 @@ td{
     padding: 15px;
     border: 1px solid #ddd;
 }
-.ed-link{
-}
 .btn2{
     background:red;
 }
-.teste{
+.ed-link{
     width:5px;
     text-align:justify;
+}
+.link-hover:hover{
+   color:#FF0000;
+}
+.link-hover:visited{
+    color:black;
+}
+.link-hover:link{
+    color:black;
+}
+.link-hover:active{
+    color:white;
 }
 .icons-espa{
     margin:5px;
@@ -87,6 +108,10 @@ td{
     padding:8px;
     width:80px;
 }
+.btn-entrada{
+    background-color: #00cccc;
+    color:white;
+}
 .img-logoci{
     float:left;
 }
@@ -102,4 +127,10 @@ td{
 .p-m{
      text-align:center;
      font-size:17px;
+}
+.form-alin{
+    margin-left:400px;
+}
+.form-alin2{
+    margin-left:470px;
 }
