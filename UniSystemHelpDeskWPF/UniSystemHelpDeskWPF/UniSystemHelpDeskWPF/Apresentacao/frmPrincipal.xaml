@@ -1,0 +1,16 @@
+﻿<Window x:Class="UniSystemHelpDeskWPF.Apresentacao.frmPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frmPrincipal" Height="643" Width="1277" >
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="100" Margin="10,10,0,0" VerticalAlignment="Top" Width="1249">
+            <MenuItem Header="Consulta" Width="350" Height="40" Click="MenuItem_Click" FontSize="25">
+                <MenuItem.Icon>
+                    <Image Source="/IMG/serachicon.png"></Image>
+                </MenuItem.Icon>
+                <MenuItem Header="Consulta Chamado" HorizontalAlignment="Left" Width="350" Height="40"/>
+            </MenuItem>
+        </Menu>
+        <Image Source="/IMG/LogoUniSystemNEW.png" Margin="0,58,0,-58" ></Image>
+    </Grid>
+</Window>

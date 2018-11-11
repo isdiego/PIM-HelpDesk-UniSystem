@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDUniSystemHelpDeskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="US_CHAMADOS">
+    <Key>
+      <PropertyRef Name="ID_CHAMADO" />
+    </Key>
+    <Property Name="ID_CHAMADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CHAMADO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_CRIACAO_CHAMADO" Type="DateTime" Precision="0" />
+    <Property Name="DATA_INICIO_SUPORTE" Type="DateTime" Precision="0" />
+    <Property Name="DATA_FINALIZACAO_CHAMADO" Type="DateTime" Precision="0" />
+    <Property Name="SOLUCAO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="COMENTARIOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ID_USUARIOS_RESP" Type="Int32" />
+    <Property Name="ID_EQUIPAMENTO" Type="Int32" />
+    <Property Name="ID_STATUS_CHAMADO" Type="Int32" />
+    <Property Name="ID_TECNICO" Type="Int32" />
+    <NavigationProperty Name="US_EQUIPAMENTO" Relationship="Self.FK__US_CHAMAD__ID_EQ__21B6055D" FromRole="US_CHAMADOS" ToRole="US_EQUIPAMENTO" />
+    <NavigationProperty Name="US_STATUS" Relationship="Self.FK__US_CHAMAD__ID_ST__22AA2996" FromRole="US_CHAMADOS" ToRole="US_STATUS" />
+    <NavigationProperty Name="US_TECNICO" Relationship="Self.FK__US_CHAMAD__ID_TE__239E4DCF" FromRole="US_CHAMADOS" ToRole="US_TECNICO" />
+    <NavigationProperty Name="US_USUARIOS" Relationship="Self.FK__US_CHAMAD__ID_US__20C1E124" FromRole="US_CHAMADOS" ToRole="US_USUARIOS" />
+  </EntityType>
+  <EntityType Name="US_EQUIPAMENTO">
+    <Key>
+      <PropertyRef Name="ID_EQUIPAMENTO" />
+    </Key>
+    <Property Name="ID_EQUIPAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EQUIPAMENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PRIORIDADE" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_EQUIPAMENTO" Type="Int32" />
+    <NavigationProperty Name="US_CHAMADOS" Relationship="Self.FK__US_CHAMAD__ID_EQ__21B6055D" FromRole="US_EQUIPAMENTO" ToRole="US_CHAMADOS" />
+    <NavigationProperty Name="US_TIPO_EQUIPAMENTO" Relationship="Self.FK__US_EQUIPA__ID_TI__1A14E395" FromRole="US_EQUIPAMENTO" ToRole="US_TIPO_EQUIPAMENTO" />
+  </EntityType>
+  <EntityType Name="US_SETORES">
+    <Key>
+      <PropertyRef Name="ID_SETOR" />
+    </Key>
+    <Property Name="ID_SETOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SETOR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="US_USUARIOS" Relationship="Self.FK__US_USUARI__ID_SE__15502E78" FromRole="US_SETORES" ToRole="US_USUARIOS" />
+  </EntityType>
+  <EntityType Name="US_STATUS">
+    <Key>
+      <PropertyRef Name="ID_STATUS_CHAMADO" />
+    </Key>
+    <Property Name="ID_STATUS_CHAMADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STATUS_CHAMADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="US_CHAMADOS" Relationship="Self.FK__US_CHAMAD__ID_ST__22AA2996" FromRole="US_STATUS" ToRole="US_CHAMADOS" />
+  </EntityType>
+  <EntityType Name="US_TECNICO">
+    <Key>
+      <PropertyRef Name="ID_TECNICO" />
+    </Key>
+    <Property Name="ID_TECNICO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TECNICO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="US_CHAMADOS" Relationship="Self.FK__US_CHAMAD__ID_TE__239E4DCF" FromRole="US_TECNICO" ToRole="US_CHAMADOS" />
+  </EntityType>
+  <EntityType Name="US_TIPO_EQUIPAMENTO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_EQUIPAMENTO" />
+    </Key>
+    <Property Name="ID_TIPO_EQUIPAMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO_EQUIPAMENTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="US_EQUIPAMENTO" Relationship="Self.FK__US_EQUIPA__ID_TI__1A14E395" FromRole="US_TIPO_EQUIPAMENTO" ToRole="US_EQUIPAMENTO" />
+  </EntityType>
+  <EntityType Name="US_TIPO_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_USUARIO" />
+    </Key>
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPO_USUARIO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="US_USUARIOS" Relationship="Self.FK__US_USUARI__ID_TI__145C0A3F" FromRole="US_TIPO_USUARIO" ToRole="US_USUARIOS" />
+  </EntityType>
+  <EntityType Name="US_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIOS" />
+    </Key>
+    <Property Name="ID_USUARIOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOME_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SENHA_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" />
+    <Property Name="ID_SETOR" Type="Int32" />
+    <NavigationProperty Name="US_CHAMADOS" Relationship="Self.FK__US_CHAMAD__ID_US__20C1E124" FromRole="US_USUARIOS" ToRole="US_CHAMADOS" />
+    <NavigationProperty Name="US_SETORES" Relationship="Self.FK__US_USUARI__ID_SE__15502E78" FromRole="US_USUARIOS" ToRole="US_SETORES" />
+    <NavigationProperty Name="US_TIPO_USUARIO" Relationship="Self.FK__US_USUARI__ID_TI__145C0A3F" FromRole="US_USUARIOS" ToRole="US_TIPO_USUARIO" />
+  </EntityType>
+  <EntityType Name="ConsultaU">
+    <Key>
+      <PropertyRef Name="NOME_USUARIO" />
+      <PropertyRef Name="ID_CHAMADO" />
+      <PropertyRef Name="STATUS_CHAMADO" />
+    </Key>
+    <Property Name="NOME_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_CHAMADO" Type="Int32" Nullable="false" />
+    <Property Name="CHAMADO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_CRIACAO_CHAMADO" Type="DateTime" Precision="0" />
+    <Property Name="DATA_FINALIZACAO_CHAMADO" Type="DateTime" Precision="0" />
+    <Property Name="STATUS_CHAMADO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TECNICO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__US_CHAMAD__ID_EQ__21B6055D">
+    <End Role="US_EQUIPAMENTO" Type="Self.US_EQUIPAMENTO" Multiplicity="0..1" />
+    <End Role="US_CHAMADOS" Type="Self.US_CHAMADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="US_EQUIPAMENTO">
+        <PropertyRef Name="ID_EQUIPAMENTO" />
+      </Principal>
+      <Dependent Role="US_CHAMADOS">
+        <PropertyRef Name="ID_EQUIPAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__US_CHAMAD__ID_ST__22AA2996">
+    <End Role="US_STATUS" Type="Self.US_STATUS" Multiplicity="0..1" />
+    <End Role="US_CHAMADOS" Type="Self.US_CHAMADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="US_STATUS">
+        <PropertyRef Name="ID_STATUS_CHAMADO" />
+      </Principal>
+      <Dependent Role="US_CHAMADOS">
+        <PropertyRef Name="ID_STATUS_CHAMADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__US_CHAMAD__ID_TE__239E4DCF">
+    <End Role="US_TECNICO" Type="Self.US_TECNICO" Multiplicity="0..1" />
+    <End Role="US_CHAMADOS" Type="Self.US_CHAMADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="US_TECNICO">
+        <PropertyRef Name="ID_TECNICO" />
+      </Principal>
+      <Dependent Role="US_CHAMADOS">
+        <PropertyRef Name="ID_TECNICO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__US_CHAMAD__ID_US__20C1E124">
+    <End Role="US_USUARIOS" Type="Self.US_USUARIOS" Multiplicity="0..1" />
+    <End Role="US_CHAMADOS" Type="Self.US_CHAMADOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="US_USUARIOS">
+        <PropertyRef Name="ID_USUARIOS" />
+      </Principal>
+      <Dependent Role="US_CHAMADOS">
+        <PropertyRef Name="ID_USUARIOS_RESP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__US_EQUIPA__ID_TI__1A14E395">
+    <End Role="US_TIPO_EQUIPAMENTO" Type="Self.US_TIPO_EQUIPAMENTO" Multiplicity="0..1" />
+    <End Role="US_EQUIPAMENTO" Type="Self.US_EQUIPAMENTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="US_TIPO_EQUIPAMENTO">
+        <PropertyRef Name="ID_TIPO_EQUIPAMENTO" />
+      </Principal>
+      <Dependent Role="US_EQUIPAMENTO">
+        <PropertyRef Name="ID_TIPO_EQUIPAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__US_USUARI__ID_SE__15502E78">
+    <End Role="US_SETORES" Type="Self.US_SETORES" Multiplicity="0..1" />
+    <End Role="US_USUARIOS" Type="Self.US_USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="US_SETORES">
+        <PropertyRef Name="ID_SETOR" />
+      </Principal>
+      <Dependent Role="US_USUARIOS">
+        <PropertyRef Name="ID_SETOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__US_USUARI__ID_TI__145C0A3F">
+    <End Role="US_TIPO_USUARIO" Type="Self.US_TIPO_USUARIO" Multiplicity="0..1" />
+    <End Role="US_USUARIOS" Type="Self.US_USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="US_TIPO_USUARIO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Principal>
+      <Dependent Role="US_USUARIOS">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDUniSystemHelpDeskEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="US_CHAMADOS" EntityType="Self.US_CHAMADOS" />
+    <EntitySet Name="US_EQUIPAMENTO" EntityType="Self.US_EQUIPAMENTO" />
+    <EntitySet Name="US_SETORES" EntityType="Self.US_SETORES" />
+    <EntitySet Name="US_STATUS" EntityType="Self.US_STATUS" />
+    <EntitySet Name="US_TECNICO" EntityType="Self.US_TECNICO" />
+    <EntitySet Name="US_TIPO_EQUIPAMENTO" EntityType="Self.US_TIPO_EQUIPAMENTO" />
+    <EntitySet Name="US_TIPO_USUARIO" EntityType="Self.US_TIPO_USUARIO" />
+    <EntitySet Name="US_USUARIOS" EntityType="Self.US_USUARIOS" />
+    <EntitySet Name="ConsultaUS" EntityType="Self.ConsultaU" />
+    <AssociationSet Name="FK__US_CHAMAD__ID_EQ__21B6055D" Association="Self.FK__US_CHAMAD__ID_EQ__21B6055D">
+      <End Role="US_EQUIPAMENTO" EntitySet="US_EQUIPAMENTO" />
+      <End Role="US_CHAMADOS" EntitySet="US_CHAMADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__US_CHAMAD__ID_ST__22AA2996" Association="Self.FK__US_CHAMAD__ID_ST__22AA2996">
+      <End Role="US_STATUS" EntitySet="US_STATUS" />
+      <End Role="US_CHAMADOS" EntitySet="US_CHAMADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__US_CHAMAD__ID_TE__239E4DCF" Association="Self.FK__US_CHAMAD__ID_TE__239E4DCF">
+      <End Role="US_TECNICO" EntitySet="US_TECNICO" />
+      <End Role="US_CHAMADOS" EntitySet="US_CHAMADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__US_CHAMAD__ID_US__20C1E124" Association="Self.FK__US_CHAMAD__ID_US__20C1E124">
+      <End Role="US_USUARIOS" EntitySet="US_USUARIOS" />
+      <End Role="US_CHAMADOS" EntitySet="US_CHAMADOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__US_EQUIPA__ID_TI__1A14E395" Association="Self.FK__US_EQUIPA__ID_TI__1A14E395">
+      <End Role="US_TIPO_EQUIPAMENTO" EntitySet="US_TIPO_EQUIPAMENTO" />
+      <End Role="US_EQUIPAMENTO" EntitySet="US_EQUIPAMENTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__US_USUARI__ID_SE__15502E78" Association="Self.FK__US_USUARI__ID_SE__15502E78">
+      <End Role="US_SETORES" EntitySet="US_SETORES" />
+      <End Role="US_USUARIOS" EntitySet="US_USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__US_USUARI__ID_TI__145C0A3F" Association="Self.FK__US_USUARI__ID_TI__145C0A3F">
+      <End Role="US_TIPO_USUARIO" EntitySet="US_TIPO_USUARIO" />
+      <End Role="US_USUARIOS" EntitySet="US_USUARIOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
